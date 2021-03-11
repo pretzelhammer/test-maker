@@ -4,6 +4,19 @@
 			Kitchen Sink
 		</m-heading>
 
+		<m-segmented-control v-model="selectedSegment">
+			<m-segment value="short">
+				Short button
+			</m-segment>
+			<m-segment value="medium">
+				Mediuuuum button
+			</m-segment>
+			<m-segment value="long">
+				Loooooooooong button
+			</m-segment>
+		</m-segmented-control>
+		selected segment: {{ selectedSegment }}
+
 		<div class="section">
 			<m-heading :size="2">
 				Button
@@ -467,6 +480,7 @@ import { MStepper } from '@square/maker/components/Stepper';
 import { MText } from '@square/maker/components/Text';
 import { MTextarea } from '@square/maker/components/Textarea';
 import { MToggle } from '@square/maker/components/Toggle';
+import { MSegmentedControl, MSegment } from '@square/maker/components/SegmentedControl';
 
 export default {
 	components: {
@@ -491,10 +505,13 @@ export default {
 		MText,
 		MTextarea,
 		MToggle,
+		MSegmentedControl,
+		MSegment,
 	},
 
 	data() {
 		return {
+			selectedSegment: 'short',
 			number: 1,
 			currentOption: '1',
 			options: [
